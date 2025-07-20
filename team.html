@@ -1,0 +1,56 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="team-container">
+    <h2 class="page-title">فريقك</h2>
+    
+    <div class="invite-section">
+        <h3>رمز الدعوة الخاص بك</h3>
+        <div class="invite-code-container">
+            <div class="invite-code-box">
+                <span class="invite-code">{{ user.invite_code }}</span>
+                <button class="copy-btn" onclick="copyInviteCode('{{ user.invite_code }}')">
+                    <i class="fas fa-copy"></i>
+                    نسخ
+                </button>
+            </div>
+            <p class="invite-description">شارك هذا الرمز مع أصدقائك للحصول على عمولة 25% من إيداعاتهم</p>
+        </div>
+    </div>
+    
+    <div class="team-stats">
+        <div class="stat-card">
+            <h3>{{ team_members|length }}</h3>
+            <p>عدد الأعضاء</p>
+        </div>
+        <div class="stat-card">
+            <h3>25%</h3>
+            <p>عمولة الإحالة</p>
+        </div>
+    </div>
+    
+    {% if team_members %}
+    <div class="team-list">
+        <h3>أعضاء الفريق</h3>
+        {% for member in team_members %}
+        <div class="team-member">
+            <div class="member-info">
+                <div class="member-id">{{ member.id }}</div>
+                <div class="member-name">{{ member.username }}</div>
+            </div>
+            <div class="commission-info">
+                <span class="commission">عمولة 25% من الإيداع</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-team">
+        <i class="fas fa-users"></i>
+        <p>لا يوجد أعضاء في فريقك بعد</p>
+        <p>ادع أصدقاءك للانضمام واحصل على عمولة 25%</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

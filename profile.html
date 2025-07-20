@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="profile-container-wide">
+    <div class="profile-header-wide">
+        <div class="user-info">
+            <h2>{{ user.username }}</h2>
+            <p class="user-id">ID: {{ user.id }}</p>
+        </div>
+
+        <div class="balance-cards-horizontal">
+            <div class="balance-card-compact">
+                <div class="balance-amount">{{ user.egp_balance }}</div>
+                <div class="balance-currency">EGP</div>
+                <div class="balance-label">الرصيد المصري</div>
+            </div>
+            <div class="balance-card-compact">
+                <div class="balance-amount">{{ user.usdt_balance }}</div>
+                <div class="balance-currency">USDT</div>
+                <div class="balance-label">رصيد الدولار</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="action-buttons-wide">
+        <a href="{{ url_for('deposit') }}" class="btn-action-wide deposit">
+            <i class="fas fa-plus"></i>
+            إيداع الأموال
+        </a>
+        <a href="{{ url_for('withdraw') }}" class="btn-action-wide withdraw">
+            <i class="fas fa-minus"></i>
+            سحب الأموال
+        </a>
+        <button onclick="checkProfits()" class="btn-action-wide btn-success">تحديث الأرباح</button>
+    </div>
+
+    <div class="transactions-section-wide">
+        <h3>سجل المعاملات</h3>
+        {% if transactions %}
+        <div class="transactions-list-wide">
+            {% for transaction in transactions %}
+            <div class="transaction-item-wide">
+                <div class="transaction-info">
+                    <div class="transaction-type">{{ transaction.type }}</div>
+                    <div class="transaction-amount">{{ transaction.amount }} {{ transaction.currency }}</div>
+                </div>
+                <div class="transaction-status status-{{ 'pending' if transaction.status == 'قيد المراجعة' else 'success' }}">
+                    {{ transaction.status }}
+                </div>
+                <div class="transaction-date">{{ transaction.created_at[:10] }}</div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="empty-transactions">
+            <p>لا توجد معاملات بعد</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="profile-actions">
+        <a href="{{ url_for('logout') }}" class="btn-logout">تسجيل الخروج</a>
+    </div>
+</div>
+{% endblock %}

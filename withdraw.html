@@ -1,0 +1,61 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="withdraw-container">
+    <h2 class="page-title">سحب الأموال</h2>
+    
+    <div class="balance-info">
+        <div class="balance-item">
+            <span>رصيد EGP:</span>
+            <span>{{ user.egp_balance }} EGP</span>
+        </div>
+        <div class="balance-item">
+            <span>رصيد USDT:</span>
+            <span>{{ user.usdt_balance }} USDT</span>
+        </div>
+    </div>
+    
+    <div class="fee-notice">
+        <i class="fas fa-info-circle"></i>
+        <p>رسوم السحب: 25% من المبلغ المسحوب</p>
+    </div>
+    
+    <div class="currency-tabs">
+        <button class="currency-tab active" onclick="showWithdrawCurrency('egp')">EGP</button>
+        <button class="currency-tab" onclick="showWithdrawCurrency('usdt')">USDT</button>
+    </div>
+    
+    <!-- EGP Withdrawal -->
+    <div id="egp-withdraw" class="withdraw-form active">
+        <form method="POST">
+            <input type="hidden" name="currency" value="EGP">
+            <div class="form-group">
+                <label>مبلغ السحب (EGP)</label>
+                <input type="number" name="amount" placeholder="أدخل المبلغ" required>
+            </div>
+            <div class="form-group">
+                <label>رقم الهاتف</label>
+                <input type="tel" name="phone" placeholder="رقم الهاتف لاستلام الأموال" required>
+            </div>
+            <button type="submit" class="btn-primary">طلب سحب</button>
+        </form>
+    </div>
+    
+    <!-- USDT Withdrawal -->
+    <div id="usdt-withdraw" class="withdraw-form">
+        <form method="POST">
+            <input type="hidden" name="currency" value="USDT">
+            <div class="form-group">
+                <label>مبلغ السحب (USDT)</label>
+                <input type="number" name="amount" step="0.01" placeholder="أدخل المبلغ" required>
+            </div>
+            <div class="form-group">
+                <label>عنوان المحفظة</label>
+                <input type="text" name="address" placeholder="عنوان محفظة USDT" required>
+            </div>
+            <button type="submit" class="btn-primary">طلب سحب</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

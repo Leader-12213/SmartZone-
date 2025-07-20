@@ -1,0 +1,110 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="products-container">
+    <div class="products-header">
+        <h2 class="page-title">المنتجات المتاحة</h2>
+        <a href="{{ url_for('my_products') }}" class="my-products-btn">
+            <i class="fas fa-shopping-bag"></i>
+            منتجاتي
+        </a>
+    </div>
+    
+    <div class="products-grid-wide">
+        <div class="product-card-wide">
+            <div class="product-header">
+                <h3>VIP 1 Smart Zone</h3>
+                <div class="price">200 EGP</div>
+            </div>
+            <div class="daily-limit-info">
+                <span class="limit-text">الحد اليومي: {{ limits.vip1.sold }}/{{ limits.vip1.max }}</span>
+                <div class="limit-bar">
+                    <div class="limit-progress" style="width: {{ (limits.vip1.sold / limits.vip1.max * 100) }}%"></div>
+                </div>
+            </div>
+            <div class="product-details-grid">
+                <div class="detail-item">
+                    <span class="label">الدخل اليومي:</span>
+                    <span class="value">40 EGP</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">المدة:</span>
+                    <span class="value">10 أيام</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">العوائد:</span>
+                    <span class="value returns">200%</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">إجمالي العائد:</span>
+                    <span class="value total-return">400 EGP</span>
+                </div>
+            </div>
+            <button class="btn-buy" onclick="buyProduct('vip1')" {% if limits.vip1.sold >= limits.vip1.max %}disabled{% endif %}>
+                {% if limits.vip1.sold >= limits.vip1.max %}نفذت الكمية{% else %}شراء{% endif %}
+            </button>
+        </div>
+        
+        <div class="product-card-wide">
+            <div class="product-header">
+                <h3>VIP 2 Smart Zone</h3>
+                <div class="price">500 EGP</div>
+            </div>
+            <div class="daily-limit-info">
+                <span class="limit-text">الحد اليومي: {{ limits.vip2.sold }}/{{ limits.vip2.max }}</span>
+                <div class="limit-bar">
+                    <div class="limit-progress" style="width: {{ (limits.vip2.sold / limits.vip2.max * 100) }}%"></div>
+                </div>
+            </div>
+            <div class="product-details-grid">
+                <div class="detail-item">
+                    <span class="label">الدخل اليومي:</span>
+                    <span class="value">100 EGP</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">المدة:</span>
+                    <span class="value">10 أيام</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">العوائد:</span>
+                    <span class="value returns">200%</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">إجمالي العائد:</span>
+                    <span class="value total-return">1000 EGP</span>
+                </div>
+            </div>
+            <button class="btn-buy" onclick="buyProduct('vip2')" {% if limits.vip2.sold >= limits.vip2.max %}disabled{% endif %}>
+                {% if limits.vip2.sold >= limits.vip2.max %}نفذت الكمية{% else %}شراء{% endif %}
+            </button>
+        </div>
+        
+        <div class="product-card-wide">
+            <div class="product-header">
+                <h3>VIP 3 Smart Zone</h3>
+                <div class="price">1000 EGP</div>
+            </div>
+            <div class="product-details-grid">
+                <div class="detail-item">
+                    <span class="label">الدخل اليومي:</span>
+                    <span class="value">230 EGP</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">المدة:</span>
+                    <span class="value">10 أيام</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">العوائد:</span>
+                    <span class="value returns">230%</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">إجمالي العائد:</span>
+                    <span class="value total-return">2300 EGP</span>
+                </div>
+            </div>
+            <button class="btn-buy" onclick="buyProduct('vip3')">شراء</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

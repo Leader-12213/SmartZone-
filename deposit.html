@@ -1,0 +1,63 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="deposit-container">
+    <h2 class="page-title">إيداع الأموال</h2>
+    
+    <div class="currency-tabs">
+        <button class="currency-tab active" onclick="showCurrency('egp')">EGP</button>
+        <button class="currency-tab" onclick="showCurrency('usdt')">USDT</button>
+    </div>
+    
+    <!-- EGP Deposit -->
+    <div id="egp-deposit" class="deposit-form active">
+        <form method="POST">
+            <input type="hidden" name="currency" value="EGP">
+            <div class="form-group">
+                <label>معرف المستخدم</label>
+                <input type="text" name="user_id" value="{{ session.user_id }}" readonly>
+            </div>
+            <div class="form-group">
+                <label>المبلغ (EGP)</label>
+                <input type="number" name="amount" placeholder="أدخل المبلغ" required>
+            </div>
+            <div class="form-group">
+                <label>رقم الهاتف المحول منه</label>
+                <input type="tel" name="phone" placeholder="أدخل رقم هاتفك" required>
+            </div>
+            <div class="receiver-info">
+                <p><strong>الرقم المحول إليه:</strong> 010XXXXXXXX</p>
+            </div>
+            <button type="submit" class="btn-primary">دفع فوري</button>
+        </form>
+    </div>
+    
+    <!-- USDT Deposit -->
+    <div id="usdt-deposit" class="deposit-form">
+        <form method="POST">
+            <input type="hidden" name="currency" value="USDT">
+            <div class="form-group">
+                <label>معرف المستخدم</label>
+                <input type="text" name="user_id" value="{{ session.user_id }}" readonly>
+            </div>
+            <div class="form-group">
+                <label>المبلغ (USDT)</label>
+                <input type="number" name="amount" step="0.01" placeholder="أدخل المبلغ" required>
+            </div>
+            <div class="form-group">
+                <label>عنوان الإيداع المحول منه</label>
+                <input type="text" name="sender_address" placeholder="أدخل عنوان محفظتك" required>
+            </div>
+            <div class="receiver-info">
+                <p><strong>عنوان الإيداع:</strong></p>
+                <div class="address-box">0x3e7f071632EEcAAcA2BCB6fC235B9b3a70Db7191</div>
+                <div class="qr-code">
+                    <p>QR Code سيتم إضافته</p>
+                </div>
+            </div>
+            <button type="submit" class="btn-primary">دفع فوري</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,51 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="home-container">
+    <div class="hero-section">
+        <div class="logo-section">
+            <h1 class="logo-text">Smart Zone</h1>
+            <p class="tagline">منصة الربح الذكية والآمنة</p>
+            <p class="description">اربح حتى 3% في وقت محدد مع أفضل منصة استثمار</p>
+        </div>
+        
+        <a href="{{ url_for('products') }}" class="btn-start">ابدأ الآن</a>
+    </div>
+    
+    <div class="vip1-draw-section">
+        <div class="draw-card">
+            <h3>انضم للسحب على VIP1</h3>
+            <p>اشترك في السحب بـ 10 EGP واحصل على فرصة للفوز بمنتج VIP1</p>
+            <div class="user-balance">رصيدك: {{ user.egp_balance }} EGP</div>
+            <button class="btn-join-draw" onclick="joinVip1Draw()">انضم مقابل 10 EGP</button>
+        </div>
+    </div>
+    
+    <div class="features-grid">
+        <div class="feature-card">
+            <i class="fas fa-chart-line"></i>
+            <h3>ربح يصل إلى 3%</h3>
+            <p>في وقت محدد</p>
+        </div>
+        
+        <div class="feature-card" onclick="openTelegram('https://t.me/Evan_SmartZone')">
+            <i class="fas fa-headset"></i>
+            <h3>دعم متوفر دائماً</h3>
+            <p>خدمة عملاء 24/7</p>
+        </div>
+        
+        <div class="feature-card" onclick="openTelegram('https://t.me/SmartZone_Official')">
+            <i class="fab fa-telegram"></i>
+            <h3>قناة Telegram</h3>
+            <p>تابع آخر الأخبار</p>
+        </div>
+        
+        <div class="feature-card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>منصة سريعة وآمنة</h3>
+            <p>حماية متقدمة</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

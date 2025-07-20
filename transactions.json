@@ -1,0 +1,76 @@
+[
+  {
+    "id": "f55f7733-95ef-4309-890c-15069fdadcb6",
+    "user_id": "SZ001",
+    "type": "شراء منتج",
+    "product": "VIP1",
+    "amount": 200,
+    "currency": "EGP",
+    "status": "مكتملة",
+    "created_at": "2025-07-17T08:29:04.903409",
+    "next_profit_time": "2025-07-20T22:37:54.012501",
+    "daily_income": 40,
+    "remaining_days": 9
+  },
+  {
+    "id": "05ffaf93-cb9e-4bfc-800c-88b083fe285f",
+    "user_id": "SZ001",
+    "type": "إيداع",
+    "amount": 200.0,
+    "currency": "EGP",
+    "status": "مكتملة",
+    "created_at": "2025-07-17T08:35:36.298755"
+  },
+  {
+    "id": "e5b8fddd-2c8b-49f0-8d7a-a212b7de40f0",
+    "user_id": "SZ001",
+    "type": "إيداع",
+    "amount": 200.0,
+    "currency": "EGP",
+    "status": "مكتملة",
+    "created_at": "2025-07-17T08:39:49.748405"
+  },
+  {
+    "id": "5246b0f1-8a7e-4ff1-b706-2ca685e73954",
+    "user_id": "SZ001",
+    "type": "شراء منتج",
+    "product": "VIP1",
+    "amount": 200,
+    "currency": "EGP",
+    "status": "مكتملة",
+    "created_at": "2025-07-17T10:28:30.901924",
+    "next_profit_time": "2025-07-20T22:37:54.012501",
+    "daily_income": 40,
+    "remaining_days": 9
+  },
+  {
+    "id": "e160716a-3b43-4e46-9ddd-fdd0bd46874a",
+    "user_id": "SZ001",
+    "type": "ربح يومي",
+    "product": "VIP1",
+    "amount": 40,
+    "currency": "EGP",
+    "status": "مكتملة",
+    "created_at": "2025-07-19T21:37:54.012501"
+  },
+  {
+    "id": "3e761d45-d17b-4dfb-8258-e76a94c37114",
+    "user_id": "SZ001",
+    "type": "ربح يومي",
+    "product": "VIP1",
+    "amount": 40,
+    "currency": "EGP",
+    "status": "مكتملة",
+    "created_at": "2025-07-19T21:37:54.012501"
+  },
+  {
+    "id": "436cfc6b-84c6-4569-ab14-500bded76851",
+    "user_id": "SZ001",
+    "type": "انضمام سحب VIP1",
+    "amount": 10,
+    "currency": "EGP",
+    "status": "مكتملة",
+    "created_at": "2025-07-19T21:38:26.945651",
+    "draw_code": "8766141035"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "45e4a75e-fbfb-4225-b2cb-38b526e2145e",
+    "user_id": "SZ001",
+    "currency": "EGP",
+    "amount": 200.0,
+    "status": "قيد المراجعة",
+    "created_at": "2025-07-17T08:35:36.297998",
+    "phone": "01227911081",
+    "receiver_phone": "010XXXXXXXX"
+  },
+  {
+    "id": "0e3fe2da-e4d2-4129-b9f5-456a419baec2",
+    "user_id": "SZ001",
+    "currency": "EGP",
+    "amount": 200.0,
+    "status": "قيد المراجعة",
+    "created_at": "2025-07-17T08:39:49.747664",
+    "phone": "01227911081",
+    "receiver_phone": "010XXXXXXXX"
+  }
+]

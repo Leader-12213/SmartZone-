@@ -1,0 +1,28 @@
+[
+  {
+    "id": "SZ001",
+    "username": "Smart Zone ",
+    "phone": "1",
+    "password": "scrypt:32768:8:1$O2H9L1cvhwaBBATQ$e28ee4968c7912c638518c8b58b43f8678d7a9ee9f68d1189c85d51e381a1403ffcd735fb7621c1afaa229209c0b738388ff800e794a845f95032258cb077a69",
+    "invite_code": "7A1E620C",
+    "invited_by": null,
+    "egp_balance": 270,
+    "usdt_balance": 0,
+    "created_at": "2025-07-17T08:21:04.409260",
+    "team_members": [
+      "SZ002"
+    ]
+  },
+  {
+    "id": "SZ002",
+    "username": "7A1E620C",
+    "phone": "7A1E620C",
+    "password": "scrypt:32768:8:1$aT14OPbK1saHWtNC$528aa5af60854f58ced20952f61153a673924bce0db9db45ac8d2b3c967b94321eafc7ca899b504682343de6f6bdb377aebf8350032f20d0ecba513d8e57bc1d",
+    "invite_code": "5241F58C",
+    "invited_by": "7A1E620C",
+    "egp_balance": 0,
+    "usdt_balance": 0,
+    "created_at": "2025-07-17T09:15:58.980438",
+    "team_members": []
+  }
+]
